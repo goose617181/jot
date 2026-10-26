@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>随记 · 极简便签</title>
+    <meta name="description" content="一个无需注册、数据保存在本地的极简便签应用。" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">✎</span>
+          <h1>随记</h1>
+        </div>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="切换深浅色">
+          <span class="icon-moon">☾</span>
+          <span class="icon-sun">☀</span>
+        </button>
+      </header>
+
+      <main>
+        <form id="noteForm" class="composer" autocomplete="off">
+          <textarea
+            id="noteInput"
+            rows="3"
+            placeholder="写点什么……（回车换行，Ctrl + Enter 保存）"
+            required
+          ></textarea>
+          <div class="composer-footer">
+            <span id="hint" class="hint"></span>
+            <button type="submit" class="primary-btn">保存便签</button>
+          </div>
+        </form>
+
+        <div class="toolbar">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="搜索便签……"
+            aria-label="搜索便签"
+          />
+          <button id="clearBtn" class="text-btn" type="button">清空全部</button>
+        </div>
+
+        <section aria-live="polite">
+          <p id="emptyState" class="empty-state" hidden>还没有便签，先写一条吧。</p>
+          <ul id="noteList" class="note-list"></ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>数据仅保存在你的浏览器本地</span>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
